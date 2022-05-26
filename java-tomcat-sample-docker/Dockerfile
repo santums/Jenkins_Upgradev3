@@ -1,4 +1,5 @@
 FROM tomcat:8.0
-RUN cp -a **/*.war /usr/local/tomcat/webapps/
-EXPOSE 8080
+WORKDIR /var/lib/jenkins/workspace/maven_project_first/java-tomcat-sample/target/
+COPY . /usr/local/tomcat/webapps/
+EXPOSE 8092
 CMD ["catalina.sh", "run"]
